@@ -10,9 +10,9 @@
 
 int main(void)
 {
-	long long int number = 612852475143;
-	long long int factor = 2;
-	long long int largest_prime_factor = 0;
+	long int number = 612852475143;
+	int factor = 2;
+	int largest_prime_factor = 0;
 
 	while (number != 1)
 	{
@@ -30,6 +30,6 @@ int main(void)
 		}
 	}
 
-	printf("%lld\n", largest_prime_factor);
+	printf("%d", largest_prime_factor);
 	return (0);
 }
