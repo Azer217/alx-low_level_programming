@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 /**
- * @largest_prime_factor : prints the largest prime factor of the number
- *  return 0
+ * main - Entry point
+ *
+ * largest_prime_factor: prints the largest prime factor of the number
+ *
+ * Return: Always 0 (success)
  */
 
 int main(void)
