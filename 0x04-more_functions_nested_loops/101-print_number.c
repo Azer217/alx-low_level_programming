@@ -2,22 +2,23 @@
 #include<stdio.h>
 
 /**
- * main - Entry of the program
- * n: input number
- * print_numbers: Function to print integer
- * Return: Always returns (0)
+ * print_integer - Entry point
+ * print_integer: Function to print integer
+ * @num: input number
+ * Return: Always 0 (success)
  */
 
-
-void print_numbers(int n)
+void print_integer(int num)
+{
+	if (num < 0)
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-		}
-		if (n / 10 != 0)
-		{
-			print_integer(n / 10);
-		}
-		_putchar(n % 10 + '0');
+		_putchar('-');
+		num = -num;
 	}
+	if (num / 10 != 0)
+	{
+		print_integer(num / 10);
+	}
+	_putchar(num % 10 + '0');
+}
+
