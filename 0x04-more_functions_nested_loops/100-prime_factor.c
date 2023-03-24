@@ -1,35 +1,35 @@
 #include <stdio.h>
+#include <math.h>
+#include "main.h"
 
 /**
- * main - Entry point
+ * main - entry point
  *
- * largest_prime_factor: prints the largest prime factor of the number
- *
- * Return: Always 0 (success)
+ * Return: always 0
  */
 
 int main(void)
 {
-	long int number = 612852475143;
-	int factor = 2;
-	int largest_prime_factor = 0;
+	long int i, n, max;
 
-	while (number != 1)
+	n = 612852475143;
+	max = -1;
+
+	while (n % 2 == 0)
 	{
-		if (number % factor == 0)
+		max = 2;
+		n /= 2;
+	}
+	for (i = 3 ; i <= sqrt(n); i = i + 2)
+	{
+		while (n % i == 0)
 		{
-			number /= factor;
-			if (factor > largest_prime_factor)
-			{
-				largest_prime_factor = factor;
-			}
-		}
-		else
-		{
-			factor++;
+			max = i;
+			n = n / i;
 		}
 	}
-
-	printf("%d", largest_prime_factor);
+	if (n > 2)
+		max = n;
+	printf("%ld\n", max);
 	return (0);
 }
